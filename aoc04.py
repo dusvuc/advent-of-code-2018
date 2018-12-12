@@ -48,6 +48,7 @@ class Day:
     def __repr__(self):
         return "#{}: {}".format(self.id, self.minutes)
 
+
 def create_timepoints(input_file):
     guard_regex = re.compile("\[(\d*)\-(\d*)\-(\d*) (\d*):(\d*)\] Guard #(\d*) begins shift")
     day_regex = re.compile("\[(\d*)\-(\d*)\-(\d*) (\d*):(\d*)\]*")
@@ -81,7 +82,7 @@ def find_sleepiest_guard(days: list):
             val[day.guard_id] = 0
         val[day.guard_id] += (day.minutes == False).sum()
     sorted_vals = sorted(val.items(), key=operator.itemgetter(1), reverse=True)
-    return sorted_vals[0][0] #highest sorted, get item 0 (id)
+    return sorted_vals[0][0]  # highest sorted, get item 0 (id)
 
 
 def find_most_common_minute(days: List[Day], guard_id: int):
@@ -92,6 +93,7 @@ def find_most_common_minute(days: List[Day], guard_id: int):
             if not day.minutes[i]:
                 minute_counts[i] += 1
     return minute_counts.argmax()
+
 
 def find_highest_resting_guard_for_any_minute(days):
     all_guards = {}
@@ -109,7 +111,7 @@ def find_highest_resting_guard_for_any_minute(days):
 
 
 timepoints = create_timepoints("inputs/input04.txt")
-timepoints = to_intervals(timepoints) # for every guard
+timepoints = to_intervals(timepoints)  # for every guard
 days = [Day(timepoint) for timepoint in timepoints]
 
 guard_id = find_sleepiest_guard(days)

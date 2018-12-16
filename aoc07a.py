@@ -10,17 +10,11 @@ def get_dependencies(filename):
     return dependencies
 
 
-def get_next_visitable(unvisited):
-    unvisitable = [node for node in unvisited if node.can_be_visited(unvisited)]
-    return list(sorted(unvisitable))[0]
-
-
 class GraphNode:
     def __init__(self, node_name):
         self.links = []
         self.depends_on = []
         self.name = node_name
-        self.is_visited = False
 
     def add(self, node):
         self.links.append(node)
@@ -46,23 +40,27 @@ class GraphNode:
                 return False
         return True
 
-    def visit(self, unvisited):
-        text = self.name
-        self.is_visited = True
-        unvisited.remove(self)
-        while len(unvisited):
-            to_visit = get_next_visitable(unvisited)
-            to_visit.is_visited = True
-            text += to_visit.name
-            unvisited.remove(to_visit)
-        return text
+
+def get_next_visitable(unvisited):
+    visitable = [node for node in unvisited if node.can_be_visited(unvisited)]
+    return list(sorted(visitable))[0]
 
 
-dependencies = get_dependencies("inputs/input07.txt")
-values = set(itertools.chain.from_iterable(dependencies))
-values = {name: GraphNode(name) for name in values}
-for (X, Y) in dependencies:
-    values[X].add(values[Y])  # X points to Y & Y is labeled as pointed to
-unpointed = sorted(list(x for x in values.values() if not x.is_dependent()))
-unvisited = list(values.values())
-print(unpointed[0].visit(unvisited))
+def visit(unvisited):
+    text = ""
+    while len(unvisited):
+        to_visit = get_next_visitable(unvisited)
+        text += to_visit.name
+        unvisited.remove(to_visit)
+    return text
+
+
+if __name__ == '__main__':
+    dependencies = get_dependencies("inputs/input07.txt")
+    values = set(itertools.chain.from_iterable(dependencies))
+    values = {name: GraphNode(name) for name in values}
+    for (X, Y) in dependencies:
+        values[X].add(values[Y])  # X points to Y & Y is labeled as pointed to
+    unvisited = list(values.values())
+    ordering = visit(unvisited)
+    print(ordering)

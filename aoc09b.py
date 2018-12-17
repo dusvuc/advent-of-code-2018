@@ -1,11 +1,11 @@
 from collections import deque
+from aoc09a import get_input
+
 
 def game(num_players: int, last_marble: int) -> int:
-    current = 1
     marbles = deque([0, 1])
     player = 1
     scores = [0] * num_players
-    print(scores)
 
     for marble in range(2, last_marble + 1):
         if marble % 23:
@@ -19,4 +19,6 @@ def game(num_players: int, last_marble: int) -> int:
     print(max(scores))
 
 
-game(493, 7186300)
+if __name__ == '__main__':
+    players, marbles = get_input("inputs/input09.txt")
+    game(players, marbles*100)

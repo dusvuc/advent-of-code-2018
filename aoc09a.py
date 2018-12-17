@@ -1,9 +1,19 @@
+import re
+
+
+def get_input(filename):
+    line = open(filename, mode="r").readline().strip()
+    regex = re.compile("(\d*) players; last marble is worth (\d*) points")
+    groups = regex.match(line).groups()
+    return int(groups[0]), int(groups[1])
+
+
 def game(num_players: int, last_marble: int) -> int:
     current = 1
     marbles = [0, 1]
     player = 1
     scores = [0] * num_players
-    print(scores)
+
 
     for marble in range(2, last_marble + 1):
         if marble % 23:
@@ -24,4 +34,6 @@ def game(num_players: int, last_marble: int) -> int:
     print(max(scores))
 
 
-game(493, 71863)
+if __name__ == '__main__':
+    players, marbles = get_input("inputs/input09.txt")
+    game(players, marbles)

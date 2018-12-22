@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f27c4fe6-35c7-4519-847d-acdaa8a3de89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/aoc10.py" beforeDir="false" afterPath="$PROJECT_DIR$/aoc10.py" afterDir="false" />
-    </list>
+    <list default="true" id="f27c4fe6-35c7-4519-847d-acdaa8a3de89" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="100" />
     <option name="y" value="40" />
     <option name="width" value="2800" />
@@ -278,23 +276,22 @@
       <workItem from="1545228142123" duration="536000" />
       <workItem from="1545228775008" duration="1964000" />
       <workItem from="1545271331296" duration="22000" />
-      <workItem from="1545271385184" duration="32722000" />
+      <workItem from="1545271385184" duration="33327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38747000" />
+    <option name="totallyTimeSpent" value="39352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16907217" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16907217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977462" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49965635" visible="true" weight="0.2538553" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49965635" weight="0.2538553" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
